@@ -8,7 +8,8 @@ namespace HashTable
         {
             Console.WriteLine("Hash Table");
             HashTable<string, int> hashtable = new HashTable<string, int>(5);
-            string sentence = "To be or not to be";
+            string sentence = "Paranoids are not paranoid because they are paranoid but because the keep putting themselves" +
+                "deliberately into paranoid avoidable situation";
             string[] words = sentence.ToLower().Split(' ');
             foreach (string word in words)
             {
@@ -24,10 +25,11 @@ namespace HashTable
                     hashtable.Add(word, value);
                 }
             }
-            int frequencyTo = hashtable.Get("to");
-            int frequencyNot = hashtable.Get("not");
-            Console.WriteLine("Frequency of to " + frequencyTo);
-            Console.WriteLine("Frequency of not " + frequencyNot);
+            int frequencyParanoid = hashtable.Get("paranoid");
+            int frequencyAre = hashtable.Get("are");
+            Console.WriteLine(@"Frequency of ""paranoid"" - " + frequencyParanoid);
+            Console.WriteLine(@"Frequency of ""are"" - " + frequencyAre);
+            Console.WriteLine(@"Frequency of ""situation"" -  " + hashtable.Get("situation"));
         }
     }
 }
